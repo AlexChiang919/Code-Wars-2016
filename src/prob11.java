@@ -8,19 +8,24 @@ import java.io.IOException;
  * @author Alex Chiang
  *
  */
-public class Template {
+public class prob11 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader scan;
 		try {
-			scan = new BufferedReader(new FileReader(Template.class.getSimpleName() + "-in.txt"));
+			scan = new BufferedReader(new FileReader(prob11.class.getSimpleName() + "-in-1.txt"));
 		} catch (FileNotFoundException ex) {
 			printF(true, "File not found: %s", ex.getMessage());
 			return;
 		}
-		int T = Integer.parseInt(scan.readLine());
-		while (T-- > 0) {
+		String current = scan.readLine();
+		while (!current.equalsIgnoreCase("0 0 0")) {
+			String[] signal = scan.readLine().split("\\s+");
+			float t1 = Float.parseFloat(signal[0]);
+			float t2 = Float.parseFloat(signal[1]);
+			float t3 = Float.parseFloat(signal[2]);
 			
+			current = scan.readLine();
 		}
 		scan.close();
 	}

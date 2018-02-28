@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-public class VariableShiftEncoding {
+public class prob14 {
 
 	private static final String PROBLEM = "prob14";
 	private static final String EXT = "-1-in.txt";
@@ -34,13 +34,13 @@ public class VariableShiftEncoding {
 	}
 	
 	private static void start() {
-		int shifts = 1;
+		int shift = 1;
 		for (char c = 'A'; c <= 'Z'; c++) {
-			VariableShiftEncoding.shifts.put(c, shifts++);
-			if (shifts >= 6)
-				shifts = 1;
+			shifts.put(c, shift++);
+			if (shift >= 6)
+				shift = 1;
 		}
-		VariableShiftEncoding.shifts.put(' ', 6);
+		shifts.put(' ', 6);
 		//printLine(VariableShiftEncoding.shifts);
 	}
 	
@@ -50,8 +50,8 @@ public class VariableShiftEncoding {
 		chars.remove(0);
 		int current = 0;
 		while (chars.size() > 0) {
-			int shifts = VariableShiftEncoding.shifts.get(sb.charAt(sb.length() - 1));
-			for (int i = 0; i < shifts - 1; i++) { 
+			int shift = shifts.get(sb.charAt(sb.length() - 1));
+			for (int i = 0; i < shift - 1; i++) { 
 				current++;
 				//printLine(current + " " + chars.size());
 				if (current == chars.size()) { 
